@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App with Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container" id="loginContainer">
+  <h2>🔐 Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p>Don't have an account? <button onclick="showRegister()">Register</button></p>
+</div>
+
+<div class="login-container" id="registerContainer" style="display:none;">
+  <h2>📝 Register</h2>
+  <input type="text" id="regUsername" placeholder="Username">
+  <input type="password" id="regPassword" placeholder="Password">
+  <button onclick="register()">Register</button>
+  <p>Already have an account? <button onclick="showLogin()">Login</button></p>
+</div>
+
+<div class="container" id="todoContainer" style="display:none;">
+<h2 class="to-do"> To-Do App</h2>
+  <button onclick="logout()" style="float:right; margin-bottom:10px; background:rgb(151, 16, 34);">Logout</button>
+
+  
+  <div class="inputrow1">
+    <input type="text" id="taskInput" placeholder="Add new task...">
+    <input type="date" id="dueDate">
+    <select id="category">
+      <option value="Work">Work</option>
+      <option value="Personal">Personal</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Other">Other</option>
+    </select>
+    <button onclick="addTask()">Add</button>
+  </div>
+
+  
+  <div class="filter-row">
+    <input type="text" id="search" placeholder="Search tasks..." onkeyup="renderTasks()">
+    <select id="filter" onchange="renderTasks()">
+      <option value="all">All</option>
+      <option value="pending">Pending</option>
+      <option value="completed">Completed</option>
+    </select>
+  </div>
+
+  
+  <ul id="taskList"></ul>
+
+  
+  <button id="submitCompleted" onclick="submitCompleted()" style="margin-top:10px; display:none;">
+    ✅ Submit Completed Tasks
+  </button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
