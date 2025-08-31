@@ -52,7 +52,7 @@ function login() {
   }
 }
 
-// Update logout to clear currentUser and tasks
+
 function logout() {
   currentUser = null;
   tasks = [];
@@ -60,7 +60,7 @@ function logout() {
   document.getElementById("loginContainer").style.display = "block";
 }
 
-// Update register to save users
+
 function register() {
   let username = document.getElementById("regUsername").value;
   let password = document.getElementById("regPassword").value;
@@ -157,3 +157,4 @@ function renderTasks() {
 function submitCompleted() {
   alert("Completed tasks are kept until you delete them manually.");
 }
+
